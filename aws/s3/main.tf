@@ -1,4 +1,6 @@
-module "s3-bucket" {
-  source  = "terraform-aws-modules/s3-bucket/aws"
-  version = "5.7.0"
+resource "aws_s3_bucket" "this" {
+  bucket = var.bucket_name
+  acl    = var.acl
+
+  tags = var.tags
 }

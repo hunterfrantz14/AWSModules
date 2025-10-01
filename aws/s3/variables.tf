@@ -1,5 +1,16 @@
-variable "bucket" {
-  description = "(Optional, Forces new resource) The name of the bucket. If omitted, Terraform will assign a random, unique name."
+variable "bucket_name" {
+  description = "Name of the S3 bucket"
   type        = string
-  default     = null
+}
+
+variable "acl" {
+  description = "Access Control List"
+  type        = string
+  default     = "private"
+}
+
+variable "tags" {
+  description = "Tags for the S3 bucket"
+  type        = map(string)
+  default     = {}
 }
